@@ -325,13 +325,13 @@ workflows:
       - run-absolem-example:
           requires:
             - test-linux
-      - test-windows:
-          matrix:
-            parameters:
-              kicad-version:
-                - 6.0.11
-                - 7.0.11
-                - 8.0.0
+#      - test-windows:
+#          matrix:
+#            parameters:
+#              kicad-version:
+#                - 6.0.11
+#                - 7.0.11
+#                - 8.0.0
 # temporarily disable, circleci changing availability & plans
 #      - test-macos:
 #          matrix:
@@ -343,7 +343,7 @@ workflows:
       - create-pcm-package:
           requires: &required-tests
             - test-linux
-            - test-windows
+#            - test-windows
 #            - test-macos
       - create-pypi-package:
           requires: *required-tests
